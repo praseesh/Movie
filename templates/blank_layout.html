@@ -1,0 +1,13 @@
+{% load static %}
+<h1>Movie Project
+
+    {% comment %} <img src="{% static 'images/img2.png' %}"/> {% endcomment %}
+    {% comment %} <img src="{% static 'images/img2.png' %}" width="200" height="200" /> {% endcomment %}
+    <img src="{% static 'images/movieroll.png' %}" width="200" height="200" />
+
+</h1>
+{% include 'menu.html' %}
+
+{% block content %}
+<p>Prasii </p>
+{% endblock content %}
