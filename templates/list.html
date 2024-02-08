@@ -1,5 +1,3 @@
-{% comment %} {% extends 'blank_layout.html'%} {% endcomment %}
-
 {% extends 'blank_layout.html' %}
 {% load static %}
 
@@ -39,70 +37,3 @@
 
 
 
-
-{% comment %} {% include 'menu.html' %} 
-{% load static %}
-{% block content %}
-
-<style>
-    body {
-        background-color: C4AD9D; /* Set the background color */
-        font-family: Arial, sans-serif; /* Set the font family */
-    }
-
-    h1 {
-        text-align: center; /* Center align the heading */
-    }
-
-    table {
-        width: 100%; /* Set the table width to 100% */
-        border-collapse: collapse; /* Collapse table borders */
-        margin-top: 20px; /* Add some top margin */
-    }
-
-    th, td {
-        border: 1px solid #dddddd; /* Add borders to table cells */
-        text-align: left; /* Left align text in cells */
-        padding: 8px; /* Add padding to cells */
-    }
-
-    tr:nth-child(even) {
-        background-color: #f2f2f2; /* Alternate row background color */
-    }
-
-    img {
-        display: block; /* Make images block-level elements */
-        margin: 0 auto; /* Center align images */
-    }
-
-    .edit-delete-links {
-        text-decoration: none; /* Remove default link underline */
-        color: blue; /* Set link color */
-        margin-right: 10px; /* Add margin to separate links */
-    }
-</style>
-
-<h1>List Movies</h1>
-<table>
-    <tr>
-        <th>title</th><th>Description</th><th>Year</th><th>edit/delete</th>
-    </tr>
-    {% for movie_obj in movies %}
-    <tr>
-        <td>{{movie_obj.title | upper}}
-            {% if movie_obj.poster %}
-            <img src="{{ movie_obj.poster.url }}" width="200" height="200">
-            {% endif %}
-        </td>
-        <td><p>Summary : {{movie_obj.description| default:"No data available"}}</p></td>
-        <td><h4>Year : {{movie_obj.year}}</h4></td>
-        <td>
-            <a class="edit-delete-links" href="{% url 'edit' movie_obj.id %}">edit</a>
-            <a class="edit-delete-links" href="{% url 'delete' movie_obj.id %}">delete</a>
-        </td>
-    </tr>
-    {% endfor %}
-</table>
-{% endblock content %}
-
-{% endcomment %}
