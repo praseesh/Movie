@@ -28,7 +28,7 @@ def create(request):
         else:
             frm = MovieForm()
     else:
-        frm = MovieForm()  # Assign a default value if request is not POST
+        frm = MovieForm() 
 
 
     # print("fmr@#@#@#@#@#@#@#@#@#@#@#@#",frm)
