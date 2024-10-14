@@ -16,7 +16,6 @@ from .forms import MovieForm
 #                   frm = MovieForm()
 #     return render(request, "create.html",{'frm':frm})
 
-
 def create(request):
     frm = None  # Initialize with None
     if request.POST:
